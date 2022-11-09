@@ -9,12 +9,13 @@ const Color darkGrey = Color(0xFF3D3D3D);
 const Color white = Color(0xFFFFFFFF);
 const Color ratingColor = Color(0xFFFFB800);
 
-TextStyle tStyle = GoogleFonts.manrope().copyWith(fontSize: 15, color: black);
+TextStyle tStyle = GoogleFonts.manrope().copyWith(fontSize: 13, color: white);
 
 const EdgeInsets paddingIcon = EdgeInsets.only(right: 8);
 const EdgeInsets paddingButton = EdgeInsets.all(8);
-const EdgeInsets allPadding = EdgeInsets.all(22);
+const EdgeInsets allPadding =
+    EdgeInsets.symmetric(horizontal: 22, vertical: 12);
 const EdgeInsets hPadding = EdgeInsets.symmetric(horizontal: 22);
 
-const Widget vSpace = SizedBox(height: 30);
+const Widget vSpace = SizedBox(height: 22);
 const Widget hSpace = SizedBox(width: 15);
