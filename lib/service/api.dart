@@ -16,14 +16,13 @@ Future<List> getMovies(List dataMovies) async {
 }
 
 Future<List> getDetailMovies(List detailMovies, int i) async {
-      final prefs = await SharedPreferences.getInstance();
+  final prefs = await SharedPreferences.getInstance();
   String url = 'https://api.themoviedb.org/3/movie/$i?api_key=$token';
   var response = await http.get(Uri.parse(url));
   var decode = json.decode(response.body);
   if (response.statusCode == 200) {
     Map<String, dynamic> map = json.decode(response.body);
     detailMovies.add(map);
-    await prefs.setStringList(key, value)
   }
   return detailMovies;
 }
