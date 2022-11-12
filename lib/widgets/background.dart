@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import '../constanta.dart';
 
 class BlurBackground extends StatelessWidget {
-  const BlurBackground(
-      {super.key,
-      required this.dataMovies,
-      required this.imageUrl,
-      required this.child});
-  final List dataMovies;
+  const BlurBackground({
+    super.key,
+    required this.imageUrl,
+    required this.child,
+  });
   final String imageUrl;
   final Widget child;
+
   @override
   Widget build(BuildContext context) {
     return Stack(

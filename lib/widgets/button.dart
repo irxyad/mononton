@@ -1,45 +1,6 @@
 import 'package:flutter/material.dart';
 import '../constanta.dart';
 
-// ignore: must_be_immutable
-// class BtnIconText extends StatelessWidget {
-//   BtnIconText(
-//       {super.key, this.icon, required this.text, this.press, this.bgColor});
-
-//   final Widget? icon;
-//   Color? bgColor;
-//   final String text;
-//   VoidCallback? press;
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return GestureDetector(
-//       onTap: press,
-//       child: Container(
-//         padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
-//         decoration: BoxDecoration(
-//           borderRadius: BorderRadius.circular(18),
-//           color: bgColor ?? Colors.transparent,
-//         ),
-//         child: Row(
-//           children: <Widget>[
-//             icon ?? const SizedBox(),
-//             SizedBox(
-//               width: icon != null ? 8 : 0,
-//             ),
-//             Text(
-//               text,
-//               style: tStyle.copyWith(
-//                   fontWeight: FontWeight.bold,
-//                   color: bgColor != null ? black : grey),
-//             )
-//           ],
-//         ),
-//       ),
-//     );
-//   }
-// }
-
 class BtnTextIcon extends StatelessWidget {
   const BtnTextIcon(
       {super.key,
@@ -67,7 +28,7 @@ class BtnTextIcon extends StatelessWidget {
           color: bgColor ?? white,
         ),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             text,
             icon != null
@@ -94,11 +55,11 @@ class BtnIconText extends StatelessWidget {
       this.padding,
       this.width,
       this.radius,
-      required this.text,
+      this.text,
       required this.press});
   final Color? bgColor;
   final Widget? icon;
-  final Widget text;
+  final Widget? text;
   final Color? textColor;
   final double? width;
   final double? radius;
@@ -109,7 +70,7 @@ class BtnIconText extends StatelessWidget {
     return GestureDetector(
       onTap: press,
       child: Container(
-        width: width ?? null,
+        width: width,
         padding:
             padding ?? const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
         decoration: BoxDecoration(
@@ -120,14 +81,14 @@ class BtnIconText extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             icon ?? const SizedBox(),
-            icon != null
+            text != null
                 ? const SizedBox(
                     width: 8,
                   )
                 : const SizedBox(
                     width: 0,
                   ),
-            text,
+            text ?? const SizedBox()
           ],
         ),
       ),

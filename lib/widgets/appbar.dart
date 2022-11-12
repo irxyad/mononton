@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../constanta.dart';
 
 class CustomAppbar extends StatelessWidget {
@@ -25,7 +26,10 @@ class CustomAppbar extends StatelessWidget {
                       MaterialStateProperty.all(Colors.transparent),
                   elevation: MaterialStateProperty.all(0),
                   padding: MaterialStateProperty.all(EdgeInsets.zero)),
-              onPressed: () {},
+              onPressed: () async {
+                final prefs = await SharedPreferences.getInstance();
+                prefs.clear();
+              },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,

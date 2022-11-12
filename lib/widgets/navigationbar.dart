@@ -9,10 +9,9 @@ import '../screens/temp_screen.dart';
 class MyNavbar extends StatefulWidget {
   const MyNavbar({
     Key? key,
-    required this.wishlist,
+    required this.watchlist,
   }) : super(key: key);
-
-  final List wishlist;
+  final List watchlist;
   @override
   State<MyNavbar> createState() => _MyNavbarState();
 }
@@ -39,7 +38,7 @@ class _MyNavbarState extends State<MyNavbar> {
                     transition: Transition.downToUp);
                 break;
               case 2:
-                Get.to(() => WatchlistPage(wishlist: widget.wishlist),
+                Get.to(() => const WatchlistPage(),
                     transition: Transition.downToUp);
                 break;
               default:
