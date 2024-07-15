@@ -18,11 +18,11 @@ class TicketPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnnotatedRegion(
       value: const SystemUiOverlayStyle(systemNavigationBarColor: Colors.black),
-      child: WillPopScope(
-        onWillPop: () async {
-          Get.to(() => const HomePage());
-          return true;
-        },
+      child: PopScope(
+        canPop: true,
+        onPopInvoked: (didPop) => Get.to(
+          () => const HomePage(),
+        ),
         child: Scaffold(
           appBar: AppBar(
             centerTitle: true,
@@ -100,11 +100,11 @@ class _WatchlistPageState extends State<WatchlistPage> {
   Widget build(BuildContext context) {
     return AnnotatedRegion(
       value: const SystemUiOverlayStyle(systemNavigationBarColor: Colors.black),
-      child: WillPopScope(
-        onWillPop: () async {
-          Get.to(() => const HomePage());
-          return true;
-        },
+      child: PopScope(
+        canPop: true,
+        onPopInvoked: (didPop) => Get.to(
+          () => const HomePage(),
+        ),
         child: Scaffold(
           appBar: AppBar(
             centerTitle: true,
@@ -169,9 +169,10 @@ class _WatchlistPageState extends State<WatchlistPage> {
                                       height: 25,
                                       width: 25,
                                       child: SvgPicture.asset(
-                                        'assets/icons/ic_watchlist.svg',
-                                        color: Colors.pink.shade600,
-                                      ),
+                                          'assets/icons/ic_watchlist.svg',
+                                          colorFilter: ColorFilter.mode(
+                                              Colors.pink.shade600,
+                                              BlendMode.srcIn)),
                                     ),
                                   ),
                                 ),
@@ -206,21 +207,21 @@ class _WatchlistPageState extends State<WatchlistPage> {
                                             child: ElevatedButton(
                                               style: ButtonStyle(
                                                   elevation:
-                                                      MaterialStateProperty.all(
+                                                      WidgetStateProperty.all(
                                                           0),
                                                   alignment: Alignment.center,
-                                                  shape: MaterialStateProperty.all(
+                                                  shape: WidgetStateProperty.all(
                                                       const RoundedRectangleBorder(
                                                           borderRadius:
                                                               BorderRadius
                                                                   .zero)),
                                                   backgroundColor:
-                                                      MaterialStateProperty.all(
+                                                      WidgetStateProperty.all(
                                                           primaryColor),
                                                   padding:
-                                                      MaterialStateProperty.all(
+                                                      WidgetStateProperty.all(
                                                           const EdgeInsets
-                                                                  .symmetric(
+                                                              .symmetric(
                                                               horizontal: 10))),
                                               onPressed: () {
                                                 (watchlist.length);
@@ -260,11 +261,11 @@ class More extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnnotatedRegion(
       value: const SystemUiOverlayStyle(systemNavigationBarColor: Colors.black),
-      child: WillPopScope(
-        onWillPop: () async {
-          Get.to(() => const HomePage());
-          return true;
-        },
+      child: PopScope(
+        canPop: true,
+        onPopInvoked: (didPop) => Get.to(
+          () => const HomePage(),
+        ),
         child: Scaffold(
           appBar: AppBar(
             centerTitle: true,
@@ -323,11 +324,11 @@ class Upcoming extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnnotatedRegion(
       value: const SystemUiOverlayStyle(systemNavigationBarColor: Colors.black),
-      child: WillPopScope(
-        onWillPop: () async {
-          Get.to(() => const HomePage());
-          return true;
-        },
+      child: PopScope(
+        canPop: true,
+        onPopInvoked: (didPop) => Get.to(
+          () => const HomePage(),
+        ),
         child: Scaffold(
           appBar: AppBar(
             centerTitle: true,

@@ -91,7 +91,8 @@ class _BuyTicketState extends State<BuyTicket> {
                         press: () {},
                         icon: SvgPicture.asset(
                           'assets/icons/ic_search.svg',
-                          color: white,
+                          colorFilter:
+                              const ColorFilter.mode(white, BlendMode.srcIn),
                         ),
                         bgColor: primaryColor,
                         radius: 12,
@@ -205,7 +206,7 @@ class _BuyTicketState extends State<BuyTicket> {
                                                       BorderRadius.circular(8)),
                                               padding:
                                                   const EdgeInsets.symmetric(
-                                                      horizontal: 16,
+                                                      horizontal: 14,
                                                       vertical: 8),
                                               child: Text(
                                                 _currentDate.format(now),
@@ -284,7 +285,9 @@ class _BuyTicketState extends State<BuyTicket> {
                                             ),
                                             SvgPicture.asset(
                                               'assets/icons/ic_dropdown.svg',
-                                              color: white,
+                                              colorFilter:
+                                                  const ColorFilter.mode(
+                                                      white, BlendMode.srcIn),
                                               height: 8,
                                             )
                                           ],

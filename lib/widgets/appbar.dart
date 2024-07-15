@@ -5,8 +5,8 @@ import '../constanta.dart';
 
 class CustomAppbar extends StatelessWidget {
   CustomAppbar({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
   final List nah = [];
   @override
   Widget build(BuildContext context) {
@@ -21,11 +21,10 @@ class CustomAppbar extends StatelessWidget {
           children: [
             ElevatedButton(
               style: ButtonStyle(
-                  overlayColor: MaterialStateProperty.all(Colors.transparent),
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  elevation: MaterialStateProperty.all(0),
-                  padding: MaterialStateProperty.all(EdgeInsets.zero)),
+                  overlayColor: WidgetStateProperty.all(Colors.transparent),
+                  backgroundColor: WidgetStateProperty.all(Colors.transparent),
+                  elevation: WidgetStateProperty.all(0),
+                  padding: WidgetStateProperty.all(EdgeInsets.zero)),
               onPressed: () async {
                 final prefs = await SharedPreferences.getInstance();
                 prefs.clear();
@@ -44,7 +43,8 @@ class CustomAppbar extends StatelessWidget {
                       SvgPicture.asset(
                         'assets/icons/ic_location.svg',
                         height: 13,
-                        color: primaryColor,
+                        colorFilter: const ColorFilter.mode(
+                            primaryColor, BlendMode.srcIn),
                       ),
                       const SizedBox(
                         width: 5,

@@ -75,7 +75,7 @@ class _HomePageState extends State<HomePage> {
                     resizeToAvoidBottomInset: false,
                     backgroundColor: Colors.transparent,
                     appBar: PreferredSize(
-                      preferredSize: const Size.fromHeight(60),
+                      preferredSize: const Size.fromHeight(kToolbarHeight + 10),
                       child: CustomAppbar(),
                     ),
                     body: Column(children: <Widget>[
@@ -114,7 +114,8 @@ class _HomePageState extends State<HomePage> {
                                       color: Colors.transparent,
                                       child: SvgPicture.asset(
                                         'assets/icons/ic_search.svg',
-                                        color: grey,
+                                        colorFilter: const ColorFilter.mode(
+                                            white, BlendMode.srcIn),
                                       ),
                                     ),
                                     contentPadding: EdgeInsets.zero,
@@ -131,17 +132,18 @@ class _HomePageState extends State<HomePage> {
                               child: ElevatedButton(
                                 style: ButtonStyle(
                                     alignment: Alignment.center,
-                                    shape: MaterialStateProperty.all(
+                                    shape: WidgetStateProperty.all(
                                         const RoundedRectangleBorder(
                                             borderRadius: BorderRadius.zero)),
                                     backgroundColor:
-                                        MaterialStateProperty.all(primaryColor),
-                                    padding: MaterialStateProperty.all(
+                                        WidgetStateProperty.all(primaryColor),
+                                    padding: WidgetStateProperty.all(
                                         EdgeInsets.zero)),
                                 onPressed: () {},
                                 child: SvgPicture.asset(
                                   'assets/icons/ic_voice.svg',
-                                  color: white,
+                                  colorFilter: const ColorFilter.mode(
+                                      white, BlendMode.srcIn),
                                 ),
                               ),
                             )
@@ -183,7 +185,8 @@ class _HomePageState extends State<HomePage> {
                           BtnTextIcon(
                             icon: SvgPicture.asset(
                               'assets/icons/ic_forward.svg',
-                              color: white,
+                              colorFilter: const ColorFilter.mode(
+                                  white, BlendMode.srcIn),
                             ),
                             bgColor: black.withOpacity(.5),
                             press: () {
@@ -228,7 +231,10 @@ class _HomePageState extends State<HomePage> {
                                             children: [
                                                 SvgPicture.asset(
                                                   'assets/icons/ic_rating.svg',
-                                                  color: white,
+                                                  colorFilter:
+                                                      const ColorFilter.mode(
+                                                          white,
+                                                          BlendMode.srcIn),
                                                 ),
                                                 const SizedBox(
                                                   width: 5,
@@ -345,11 +351,12 @@ class _HomePageState extends State<HomePage> {
                                               bgColor: secondaryColor,
                                               icon: SvgPicture.asset(
                                                   'assets/icons/ic_watchlist.svg',
-                                                  color: watchlist[
-                                                              slideCarrousel] !=
-                                                          null
-                                                      ? Colors.pink
-                                                      : grey),
+                                                  colorFilter: ColorFilter.mode(
+                                                      watchlist[slideCarrousel] !=
+                                                              null
+                                                          ? Colors.pink
+                                                          : grey,
+                                                      BlendMode.srcIn)),
                                               press: () {
                                                 setState(() {});
                                                 if (watchlist[slideCarrousel] ==

@@ -8,9 +8,9 @@ import '../screens/temp_screen.dart';
 
 class MyNavbar extends StatefulWidget {
   const MyNavbar({
-    Key? key,
+    super.key,
     required this.watchlist,
-  }) : super(key: key);
+  });
   final List watchlist;
   @override
   State<MyNavbar> createState() => _MyNavbarState();
@@ -52,21 +52,24 @@ class _MyNavbarState extends State<MyNavbar> {
               label: _currentIndex == 0 ? '•' : '',
               icon: SvgPicture.asset(
                 'assets/icons/ic_home.svg',
-                color: _currentIndex == 0 ? white : grey,
+                colorFilter: ColorFilter.mode(
+                    _currentIndex == 0 ? white : grey, BlendMode.srcIn),
               )),
           BottomNavigationBarItem(
               tooltip: 'My ticket',
               label: _currentIndex == 1 ? '•' : '',
               icon: SvgPicture.asset(
                 'assets/icons/ic_ticket.svg',
-                color: _currentIndex == 1 ? white : grey,
+                colorFilter: ColorFilter.mode(
+                    _currentIndex == 1 ? white : grey, BlendMode.srcIn),
               )),
           BottomNavigationBarItem(
               tooltip: 'Watchlist',
               label: _currentIndex == 2 ? '•' : '',
               icon: SvgPicture.asset(
                 'assets/icons/ic_mylist.svg',
-                color: _currentIndex == 2 ? white : grey,
+                colorFilter: ColorFilter.mode(
+                    _currentIndex == 2 ? white : grey, BlendMode.srcIn),
               )),
         ]);
   }
